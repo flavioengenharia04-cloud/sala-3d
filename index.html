@@ -137,7 +137,7 @@ ol.itens .q{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink
   var scene=new THREE.Scene();
   var cam=new THREE.PerspectiveCamera(50,1,0.05,60);
 
-  var COR_PAREDE=0xD3D6D7, COR_TETO=0xFFFFFF, COR_PISO=0xD9CCB0, COR_REJUNTE=0xA99B7E;   // paredes cinza claro, teto branco fosco, piso creme
+  var COR_PAREDE=0xC2C6C8, COR_TETO=0xFFFFFF, COR_PISO=0xD9CCB0, COR_REJUNTE=0xA99B7E;   // paredes cinza claro, teto branco fosco, piso creme
   function L(c){return new THREE.MeshLambertMaterial({color:c});}
   var mats={
     parede:new THREE.MeshLambertMaterial({color:COR_PAREDE,side:THREE.BackSide}),
@@ -270,7 +270,7 @@ ol.itens .q{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink
   cupula.position.set(PX,PB+0.08,PZ); cupula.material.side=THREE.DoubleSide; G.add(cupula);
   var lampP=new THREE.Mesh(new THREE.SphereGeometry(0.04,14,10),mats.luz); lampP.position.set(PX,PB+0.07,PZ); G.add(lampP);
   luzes.push([PX,PB-0.05,PZ]);
-  luzes.forEach(function(p){ var pl=new THREE.PointLight(0xfff4e2,0.35,5); pl.position.copy(V(p)); scene.add(pl); });
+  luzes.forEach(function(p){ var pl=new THREE.PointLight(0xfff4e2,0.18,4); pl.position.copy(V(p)); scene.add(pl); });
 
   // ---------- 9/11/12/14. caixa 1 e eletroduto até a linha da janela
   caixa([W-0.03,Y1,Z1],[0.05,0.10,0.10],mats.caixa);
@@ -347,8 +347,8 @@ ol.itens .q{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--ink
   [RK0+RKPL/2,RK1-RKPL/2].forEach(function(x){ bloco(x-0.06,x+0.06,RKA-0.07,RKA-0.06,RKP,RKP+0.006,rkFrisos); }); // puxadores das portas
   [(RKYM+RKY1)/2,(RKY0+RKYM)/2].forEach(function(y){ bloco(TVX-0.08,TVX+0.08,y-0.005,y+0.005,RKP,RKP+0.006,rkFrisos); }); // puxadores das gavetas
 
-  scene.add(new THREE.AmbientLight(0xffffff,0.72));
-  var sol=new THREE.DirectionalLight(0xffffff,0.45); sol.position.set(2,6,4); scene.add(sol);
+  scene.add(new THREE.AmbientLight(0xffffff,0.80));
+  var sol=new THREE.DirectionalLight(0xffffff,0.18); sol.position.set(2,6,4); scene.add(sol);
 
   // ---------- itens numerados
   var ITENS=[
